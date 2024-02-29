@@ -47,6 +47,10 @@
             "SendGrid": {
               "target": "Package",
               "version": "[9.29.2, )"
+            },
+            "SendWithBrevo": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [

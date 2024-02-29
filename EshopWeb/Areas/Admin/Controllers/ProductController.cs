@@ -5,6 +5,7 @@ using Eshop.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using EshopWeb.Areas.Customer.Controllers;
 
 namespace EshopWeb.Areas.Admin.Controllers
 {
@@ -12,15 +13,21 @@ namespace EshopWeb.Areas.Admin.Controllers
     [Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {
+        private readonly ILogger<ProductController> _logger;
+
         private readonly IUnitOfWork _unitOfWork;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
+        public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment, ILogger<ProductController> logger)
         {
             _unitOfWork = unitOfWork;
             _webHostEnvironment = webHostEnvironment;
+            _logger = logger;
+            _logger.LogDebug(1, "NLog injected into ProductController");
         }
         public IActionResult Index()
         {
+            _logger.LogInformation("Product Index");
+
             List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
 
             return View(objProductList);
@@ -28,6 +35,8 @@ namespace EshopWeb.Areas.Admin.Controllers
 
         public IActionResult Upsert(int? id)
         {
+            _logger.LogInformation("Product Upsert");
+
             ProductVM productVM = new()
             {
                 CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
@@ -53,6 +62,8 @@ namespace EshopWeb.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Upsert(ProductVM productVM, List<IFormFile> files)
         {
+            _logger.LogInformation("Product UpsertPOST");
+
             if (ModelState.IsValid)
             {
                 if (productVM.Product.Id == 0)
@@ -124,6 +135,8 @@ namespace EshopWeb.Areas.Admin.Controllers
 
         public IActionResult DeleteImage(int imageId)
         {
+            _logger.LogInformation("Product ImageDeletion");
+
             var imageToBeDeleted = _unitOfWork.ProductImage.Get(u => u.Id == imageId);
             int productId = imageToBeDeleted.ProductId;
             if (imageToBeDeleted != null)
@@ -154,6 +167,8 @@ namespace EshopWeb.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
+            _logger.LogInformation("Product GetAll");
+
             List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
             return Json(new { data = objProductList });
         }
@@ -162,6 +177,8 @@ namespace EshopWeb.Areas.Admin.Controllers
         [HttpDelete]
         public IActionResult Delete(int? id)
         {
+            _logger.LogInformation("Product delete");
+
             var productToBeDeleted = _unitOfWork.Product.Get(u => u.Id == id);
             if (productToBeDeleted == null)
             {

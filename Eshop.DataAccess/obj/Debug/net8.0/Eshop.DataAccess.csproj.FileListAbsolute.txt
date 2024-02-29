@@ -15,3 +15,4 @@ C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\bin\Debug\net8.0\Eshop
 C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\bin\Debug\net8.0\Eshop.Models.pdb
 C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\bin\Debug\net8.0\Eshop.Utility.pdb
 C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\obj\Debug\net8.0\Eshop.DataAccess.csproj.CopyComplete
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\obj\Debug\net8.0\Eshop.DataAccess.sourcelink.json

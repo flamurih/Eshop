@@ -10,3 +10,4 @@ C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\refint\E
 C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\Eshop.Utility.pdb
 C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\ref\Eshop.Utility.dll
 C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\Eshop.Utility.csproj.AssemblyReference.cache
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\Eshop.Utility.sourcelink.json

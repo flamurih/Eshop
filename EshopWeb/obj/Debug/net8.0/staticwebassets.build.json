@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nZhosf8u/7F7bN18iz3QdaW99ZC5j1Nmriwi3+7obUM=",
+  "Hash": "nASaeyueeu8ifCmYNmxM11LHRzYz76yPLTRAVetgAwA=",
   "Source": "EshopWeb",
   "BasePath": "_content/EshopWeb",
   "Mode": "Default",
@@ -1271,12 +1271,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Flamur\\Documents\\projects\\Eshop\\EshopWeb\\wwwroot\\images\\book.png",
+      "Identity": "C:\\Users\\Flamur\\Documents\\projects\\Eshop\\EshopWeb\\wwwroot\\images\\logo.png",
       "SourceId": "EshopWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Flamur\\Documents\\projects\\Eshop\\EshopWeb\\wwwroot\\",
       "BasePath": "_content/EshopWeb",
-      "RelativePath": "images/book.png",
+      "RelativePath": "images/logo.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1287,15 +1287,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\book.png"
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
-      "Identity": "C:\\Users\\Flamur\\Documents\\projects\\Eshop\\EshopWeb\\wwwroot\\images\\lawn_leaf.jpg",
+      "Identity": "C:\\Users\\Flamur\\Documents\\projects\\Eshop\\EshopWeb\\wwwroot\\images\\success.jpg",
       "SourceId": "EshopWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Flamur\\Documents\\projects\\Eshop\\EshopWeb\\wwwroot\\",
       "BasePath": "_content/EshopWeb",
-      "RelativePath": "images/lawn_leaf.jpg",
+      "RelativePath": "images/success.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1306,7 +1306,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\lawn_leaf.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\success.jpg"
     },
     {
       "Identity": "C:\\Users\\Flamur\\Documents\\projects\\Eshop\\EshopWeb\\wwwroot\\js\\order.js",

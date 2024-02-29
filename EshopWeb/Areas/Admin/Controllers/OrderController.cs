@@ -8,30 +8,38 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using System.Security.Claims;
+using EshopWeb.Areas.Customer.Controllers;
 
 namespace EshopWeb.Areas.Admin.Controllers
 {
+
     [Area("admin")]
     [Authorize]
     public class OrderController : Controller
     {
-
+        private readonly ILogger<OrderController> _logger;
 
         private readonly IUnitOfWork _unitOfWork;
         [BindProperty]
         public OrderVM OrderVM { get; set; }
-        public OrderController(IUnitOfWork unitOfWork)
+        public OrderController(IUnitOfWork unitOfWork, ILogger<OrderController> logger)
         {
+
             _unitOfWork = unitOfWork;
+            _logger = logger;
+            _logger.LogDebug(1, "NLog injected into OrderController");
         }
 
         public IActionResult Index()
         {
+            _logger.LogInformation("Order Index");
             return View();
         }
 
         public IActionResult Details(int orderId)
         {
+            _logger.LogInformation("Order Details");
+
             OrderVM = new()
             {
                 OrderHeader = _unitOfWork.OrderHeader.Get(u => u.Id == orderId, includeProperties: "ApplicationUser"),
@@ -44,6 +52,8 @@ namespace EshopWeb.Areas.Admin.Controllers
         [Authorize(Roles = SD.Role_Admin)]
         public IActionResult UpdateOrderDetail()
         {
+            _logger.LogInformation("Order Update Detail");
+
             var orderHeaderFromDb = _unitOfWork.OrderHeader.Get(u => u.Id == OrderVM.OrderHeader.Id);
             orderHeaderFromDb.Name = OrderVM.OrderHeader.Name;
             orderHeaderFromDb.PhoneNumber = OrderVM.OrderHeader.PhoneNumber;
@@ -73,6 +83,8 @@ namespace EshopWeb.Areas.Admin.Controllers
         [Authorize(Roles = SD.Role_Admin)]
         public IActionResult StartProcessing()
         {
+            _logger.LogInformation("Order processed");
+
             _unitOfWork.OrderHeader.UpdateStatus(OrderVM.OrderHeader.Id, SD.StatusInProcess);
             _unitOfWork.Save();
             TempData["Success"] = "Order Details Updated Successfully.";
@@ -83,6 +95,7 @@ namespace EshopWeb.Areas.Admin.Controllers
         [Authorize(Roles = SD.Role_Admin)]
         public IActionResult ShipOrder()
         {
+            _logger.LogInformation("Order shipped");
 
             var orderHeader = _unitOfWork.OrderHeader.Get(u => u.Id == OrderVM.OrderHeader.Id);
             orderHeader.TrackingNumber = OrderVM.OrderHeader.TrackingNumber;
@@ -103,6 +116,7 @@ namespace EshopWeb.Areas.Admin.Controllers
         [Authorize(Roles = SD.Role_Admin)]
         public IActionResult CancelOrder()
         {
+            _logger.LogInformation("Order Cancel");
 
             var orderHeader = _unitOfWork.OrderHeader.Get(u => u.Id == OrderVM.OrderHeader.Id);
 
@@ -110,10 +124,10 @@ namespace EshopWeb.Areas.Admin.Controllers
             {
                 _unitOfWork.OrderHeader.UpdateStatus(orderHeader.Id, SD.StatusCancelled, SD.StatusCancelled); ;
             }
-         
+            _unitOfWork.OrderHeader.Remove(orderHeader);
             _unitOfWork.Save();
             TempData["Success"] = "Order Cancelled Successfully.";
-            return RedirectToAction(nameof(Details), new { orderId = OrderVM.OrderHeader.Id });
+            return View("Index");
 
         }
 
@@ -123,12 +137,14 @@ namespace EshopWeb.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Details_PAY_NOW()
         {
+            _logger.LogInformation("Order Pay");
             return View();
         }
 
         [HttpPost]
         public IActionResult PaymentConfirmation(int orderHeaderId)
         {
+            _logger.LogInformation("Order payConfirmation");
             return View(orderHeaderId);
         }
 
@@ -141,6 +157,8 @@ namespace EshopWeb.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll(string status)
         {
+            _logger.LogInformation("Order GetAll");
+
             IEnumerable<OrderHeader> objOrderHeaders;
 
 

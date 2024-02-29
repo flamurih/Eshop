@@ -2,6 +2,7 @@
 using Eshop.Models;
 using Eshop.Models.ViewModels;
 using Eshop.Utility;
+using EshopWeb.Areas.Customer.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -16,24 +17,30 @@ namespace EshopWeb.Areas.Admin.Controllers
     [Authorize(Roles = SD.Role_Admin)]
     public class UserController : Controller
     {
+        private readonly ILogger<UserController> _logger;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IUnitOfWork _unitOfWork;
 
-        public UserController(UserManager<IdentityUser> userManager, IUnitOfWork unitOfWork, RoleManager<IdentityRole> roleManager)
+        public UserController(UserManager<IdentityUser> userManager, IUnitOfWork unitOfWork, RoleManager<IdentityRole> roleManager, ILogger<UserController> logger)
         {
             _unitOfWork = unitOfWork;
             _roleManager = roleManager;
             _userManager = userManager;
+            _logger = logger;
+            _logger.LogDebug(1, "NLog injected into UserController");
         }
 
         public IActionResult Index()
         {
+            _logger.LogInformation("User Index");
             return View();
         }
 
         public IActionResult RoleManagment(string userId)
         {
+            _logger.LogInformation("User Role Managment");
+
             RoleManagmentVM RoleVM = new RoleManagmentVM()
             {
                 ApplicationUser = _unitOfWork.ApplicationUser.Get(u => u.Id == userId),
@@ -53,6 +60,8 @@ namespace EshopWeb.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult RoleManagment(RoleManagmentVM roleManagmentVM)
         {
+            _logger.LogInformation("User Role ManagmentPOST");
+
             string oldRole = _userManager.GetRolesAsync(_unitOfWork.ApplicationUser.Get(u => u.Id == roleManagmentVM.ApplicationUser.Id))
                 .GetAwaiter().GetResult().FirstOrDefault();
 
@@ -72,6 +81,8 @@ namespace EshopWeb.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
+            _logger.LogInformation("User GetAll");
+
             List<ApplicationUser> objUserList = _unitOfWork.ApplicationUser.GetAll().ToList();
 
             foreach (var user in objUserList)

@@ -12,6 +12,7 @@ namespace EshopWeb.Areas.Customer.Controllers
     [Area("Customer")]
     public class HomeController : Controller
     {
+
         private readonly ILogger<HomeController> _logger;
         private readonly IUnitOfWork _unitOfWork;
 
@@ -19,17 +20,21 @@ namespace EshopWeb.Areas.Customer.Controllers
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
+            _logger.LogDebug(1, "NLog injected into HomeController");
+
         }
 
         public IActionResult Index()
         {
-
+            _logger.LogInformation("Home Index");
             IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category,ProductImages");
             return View(productList);
         }
 
         public IActionResult Details(int productId)
         {
+            _logger.LogInformation("Home Details");
+
             ShoppingCart cart = new()
             {
                 Product = _unitOfWork.Product.Get(u => u.Id == productId, includeProperties: "Category,ProductImages"),
@@ -43,6 +48,8 @@ namespace EshopWeb.Areas.Customer.Controllers
         [Authorize]
         public IActionResult Details(ShoppingCart shoppingCart)
         {
+            _logger.LogInformation("Home DetailsPOST");
+
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
             shoppingCart.ApplicationUserId = userId;
@@ -75,12 +82,16 @@ namespace EshopWeb.Areas.Customer.Controllers
 
         public IActionResult Privacy()
         {
+            _logger.LogInformation("Home Privacy");
+
             return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
+            _logger.LogInformation("Home Error");
+
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }

@@ -13,12 +13,12 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Flamur\\Documents\\projects\\Eshop\\EshopWeb\\wwwroot\\images\\book.png",
-      "PackagePath": "staticwebassets\\images\\book.png"
+      "Id": "C:\\Users\\Flamur\\Documents\\projects\\Eshop\\EshopWeb\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
-      "Id": "C:\\Users\\Flamur\\Documents\\projects\\Eshop\\EshopWeb\\wwwroot\\images\\lawn_leaf.jpg",
-      "PackagePath": "staticwebassets\\images\\lawn_leaf.jpg"
+      "Id": "C:\\Users\\Flamur\\Documents\\projects\\Eshop\\EshopWeb\\wwwroot\\images\\success.jpg",
+      "PackagePath": "staticwebassets\\images\\success.jpg"
     },
     {
       "Id": "C:\\Users\\Flamur\\Documents\\projects\\Eshop\\EshopWeb\\wwwroot\\js\\order.js",

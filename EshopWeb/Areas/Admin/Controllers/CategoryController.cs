@@ -10,10 +10,14 @@ namespace EshopWeb.Areas.Admin.Controllers
     [Authorize(Roles = SD.Role_Admin)]
     public class CategoryController : Controller
     {
+        private readonly ILogger _logger;
         private readonly IUnitOfWork _unitOfWork;
-        public CategoryController(IUnitOfWork unitOfWork)
+        public CategoryController(IUnitOfWork unitOfWork, ILogger<CategoryController> logger)
         {
             _unitOfWork = unitOfWork;
+            _logger = logger;
+            _logger.LogDebug(1, "NLog injected into HomeController");
+
         }
         public IActionResult Index()
         {
@@ -23,11 +27,14 @@ namespace EshopWeb.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
+            _logger.LogInformation("Category Index");
             return View();
         }
         [HttpPost]
         public IActionResult Create(Category obj)
         {
+            _logger.LogInformation("Category Create");
+
             if (obj.Name == obj.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("name", "The DisplayOrder cannot exactly match the Name.");
@@ -46,6 +53,8 @@ namespace EshopWeb.Areas.Admin.Controllers
 
         public IActionResult Edit(int? id)
         {
+            _logger.LogInformation("Category Edit");
+
             if (id == null || id == 0)
             {
                 return NotFound();
@@ -63,6 +72,8 @@ namespace EshopWeb.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit(Category obj)
         {
+            _logger.LogInformation("Category EditPost");
+
             if (ModelState.IsValid)
             {
                 _unitOfWork.Category.Update(obj);
@@ -76,6 +87,8 @@ namespace EshopWeb.Areas.Admin.Controllers
 
         public IActionResult Delete(int? id)
         {
+            _logger.LogInformation("Category Delete");
+
             if (id == null || id == 0)
             {
                 return NotFound();
@@ -91,6 +104,8 @@ namespace EshopWeb.Areas.Admin.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
+            _logger.LogInformation("Category Post");
+
             Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
             if (obj == null)
             {

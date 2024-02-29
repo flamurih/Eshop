@@ -12,19 +12,22 @@ namespace EshopWeb.Areas.Customer.Controllers
     [Authorize]
     public class CartController : Controller
     {
+        private readonly ILogger<CartController> _logger;
 
         private readonly IUnitOfWork _unitOfWork;
         [BindProperty]
         public ShoppingCartVM ShoppingCartVM { get; set; }
-        public CartController(IUnitOfWork unitOfWork)
+        public CartController(IUnitOfWork unitOfWork, ILogger<CartController> logger)
         {
             _unitOfWork = unitOfWork;
+            _logger = logger;
+            _logger.LogDebug(1, "NLog injected into CartController");
         }
 
 
         public IActionResult Index()
         {
-
+            _logger.LogInformation("Cart Index");
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
 
@@ -49,6 +52,8 @@ namespace EshopWeb.Areas.Customer.Controllers
 
         public IActionResult Summary()
         {
+            _logger.LogInformation("Cart Summary");
+
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
 
@@ -75,6 +80,7 @@ namespace EshopWeb.Areas.Customer.Controllers
                 cart.Price = cart.Product.Price;
                 ShoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
             }
+            
             return View(ShoppingCartVM);
         }
 
@@ -82,6 +88,8 @@ namespace EshopWeb.Areas.Customer.Controllers
         [ActionName("Summary")]
         public IActionResult SummaryPOST()
         {
+            _logger.LogInformation("Cart SummaryPOST");
+
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
 
@@ -120,13 +128,21 @@ namespace EshopWeb.Areas.Customer.Controllers
                 _unitOfWork.Save();
             }
 
+            foreach (var cart in ShoppingCartVM.ShoppingCartList)
+            {
+                _unitOfWork.ShoppingCart.Remove(cart);
+            }
 
-            return View();
+            _unitOfWork.Save();
+
+
+            return View("OrderConfirmation");
         }
 
 
         public IActionResult Plus(int cartId)
         {
+            _logger.LogInformation("Cart PlusTriggered");
             var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
             cartFromDb.Count += 1;
             _unitOfWork.ShoppingCart.Update(cartFromDb);
@@ -136,6 +152,8 @@ namespace EshopWeb.Areas.Customer.Controllers
 
         public IActionResult Minus(int cartId)
         {
+            _logger.LogInformation("Cart MinusTriggered");
+
             var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
             if (cartFromDb.Count <= 1)
             {
@@ -157,6 +175,8 @@ namespace EshopWeb.Areas.Customer.Controllers
 
         public IActionResult Remove(int cartId)
         {
+            _logger.LogInformation("Cart RemoveTriggered");
+
             var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
 
             _unitOfWork.ShoppingCart.Remove(cartFromDb);

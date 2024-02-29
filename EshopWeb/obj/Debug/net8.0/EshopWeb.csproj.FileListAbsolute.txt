@@ -593,3 +593,10 @@ C:\Users\Flamur\Documents\projects\Eshop\EshopWeb\bin\Debug\net8.0\Eshop.DataAcc
 C:\Users\Flamur\Documents\projects\Eshop\EshopWeb\bin\Debug\net8.0\Eshop.Utility.pdb
 C:\Users\Flamur\Documents\projects\Eshop\EshopWeb\bin\Debug\net8.0\SendGrid.dll
 C:\Users\Flamur\Documents\projects\Eshop\EshopWeb\bin\Debug\net8.0\StarkbankEcdsa.dll
+C:\Users\Flamur\Documents\projects\Eshop\EshopWeb\bin\Debug\net8.0\RestWrapper.dll
+C:\Users\Flamur\Documents\projects\Eshop\EshopWeb\bin\Debug\net8.0\SendWithBrevo.dll
+C:\Users\Flamur\Documents\projects\Eshop\EshopWeb\obj\Debug\net8.0\EshopWeb.sourcelink.json
+C:\Users\Flamur\Documents\projects\Eshop\EshopWeb\bin\Debug\net8.0\NLog.dll
+C:\Users\Flamur\Documents\projects\Eshop\EshopWeb\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+C:\Users\Flamur\Documents\projects\Eshop\EshopWeb\bin\Debug\net8.0\NLog.Web.AspNetCore.dll
+C:\Users\Flamur\Documents\projects\Eshop\EshopWeb\bin\Debug\net8.0\nlog.config
