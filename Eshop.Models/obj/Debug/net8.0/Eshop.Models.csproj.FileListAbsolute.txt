@@ -1,0 +1,12 @@
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Models\bin\Debug\net8.0\Eshop.Models.deps.json
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Models\bin\Debug\net8.0\Eshop.Models.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Models\bin\Debug\net8.0\Eshop.Models.pdb
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Models\obj\Debug\net8.0\Eshop.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Models\obj\Debug\net8.0\Eshop.Models.AssemblyInfoInputs.cache
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Models\obj\Debug\net8.0\Eshop.Models.AssemblyInfo.cs
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Models\obj\Debug\net8.0\Eshop.Models.csproj.CoreCompileInputs.cache
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Models\obj\Debug\net8.0\Eshop.Models.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Models\obj\Debug\net8.0\refint\Eshop.Models.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Models\obj\Debug\net8.0\Eshop.Models.pdb
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Models\obj\Debug\net8.0\ref\Eshop.Models.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Models\obj\Debug\net8.0\Eshop.Models.csproj.AssemblyReference.cache

@@ -1,0 +1,17 @@
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\bin\Debug\net8.0\Eshop.DataAccess.deps.json
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\bin\Debug\net8.0\Eshop.DataAccess.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\bin\Debug\net8.0\Eshop.DataAccess.pdb
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\obj\Debug\net8.0\Eshop.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\obj\Debug\net8.0\Eshop.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\obj\Debug\net8.0\Eshop.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\obj\Debug\net8.0\Eshop.DataAccess.AssemblyInfo.cs
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\obj\Debug\net8.0\Eshop.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\obj\Debug\net8.0\Eshop.DataAccess.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\obj\Debug\net8.0\refint\Eshop.DataAccess.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\obj\Debug\net8.0\Eshop.DataAccess.pdb
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\obj\Debug\net8.0\ref\Eshop.DataAccess.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\bin\Debug\net8.0\Eshop.Models.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\bin\Debug\net8.0\Eshop.Utility.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\bin\Debug\net8.0\Eshop.Models.pdb
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\bin\Debug\net8.0\Eshop.Utility.pdb
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.DataAccess\obj\Debug\net8.0\Eshop.DataAccess.csproj.CopyComplete

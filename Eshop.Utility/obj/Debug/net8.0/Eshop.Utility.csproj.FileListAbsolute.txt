@@ -1,0 +1,12 @@
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\bin\Debug\net8.0\Eshop.Utility.deps.json
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\bin\Debug\net8.0\Eshop.Utility.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\bin\Debug\net8.0\Eshop.Utility.pdb
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\Eshop.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\Eshop.Utility.AssemblyInfoInputs.cache
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\Eshop.Utility.AssemblyInfo.cs
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\Eshop.Utility.csproj.CoreCompileInputs.cache
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\Eshop.Utility.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\refint\Eshop.Utility.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\Eshop.Utility.pdb
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\ref\Eshop.Utility.dll
+C:\Users\Flamur\Documents\projects\Eshop\Eshop.Utility\obj\Debug\net8.0\Eshop.Utility.csproj.AssemblyReference.cache
